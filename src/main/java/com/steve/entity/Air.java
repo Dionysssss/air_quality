@@ -1,5 +1,7 @@
 package com.steve.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class Air {
@@ -8,15 +10,19 @@ public class Air {
 
     private Integer districtId;
 
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date monitorTime;
 
     private Integer pm10;
 
-    private Integer pm25;
+     private Integer pm25;
 
     private String monitoringStation;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date lastModifyTime;
+
+    private String districtName;
 
     public Integer getId() {
         return id;
@@ -72,5 +78,27 @@ public class Air {
 
     public void setLastModifyTime(Date lastModifyTime) {
         this.lastModifyTime = lastModifyTime;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
+    }
+
+    @Override
+    public String toString() {
+        return "Air{" +
+                "id=" + id +
+                ", districtId=" + districtId +
+                ", monitorTime=" + monitorTime +
+                ", pm10=" + pm10 +
+                ", pm25=" + pm25 +
+                ", monitoringStation=" + monitoringStation +
+                ", lastModifyTime=" + lastModifyTime +
+                ", districtName='" + districtName + '\'' +
+                '}';
     }
 }

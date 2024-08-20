@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///Air_Project
+    url: jdbc:mysql:///Air_Project?useSSL=false
     username: root
     password: Wjz166605
 

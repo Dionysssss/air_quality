@@ -1,11 +1,22 @@
 package com.steve.vo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 public class ResultVO {
     private Integer code;
 
     private String msg;
 
+    @JsonInclude(value = JsonInclude.Include.NON_EMPTY)
+    private Long total;
+
     private Object data;
+
+    public Long getTotal() { return total; }
+
+    public void setTotal(Long total) {
+        this.total = total;
+    }
 
     public Integer getCode() {
         return code;

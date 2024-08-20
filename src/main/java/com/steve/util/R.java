@@ -17,4 +17,17 @@ public class R {
         vo.setData(data);
         return vo;
     }
+
+    public static ResultVO ok(Long total, Object data){
+        ResultVO vo = ok(data);
+        vo.setTotal(total);
+        return vo;
+    }
+
+    public static ResultVO errpr(Integer code, String message){
+        ResultVO vo = new ResultVO();
+        vo.setCode(code);
+        vo.setMsg(message);
+        return vo;
+    }
 }

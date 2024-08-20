@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.steve.mapper.AirMapper">
+    <select id="findByDistrictId" resultType="com.steve.entity.Air">
+        select
+            a.*,
+            d.name as district_name
+
+        from
+            air a, district d
+        where
+            a.district_id = d.id
+            <if test="districtId != null">
+                and a.district_id = #{districtId}
+            </if>
+    </select>
+
+</mapper>
+
+
