@@ -30,4 +30,12 @@ public class R {
         vo.setMsg(message);
         return vo;
     }
+
+    public static ResultVO error(Integer code, String message) {
+        ResultVO vo = new ResultVO();
+        vo.setCode(code);
+        vo.setMsg(message);
+        return vo;
+
+    }
 }

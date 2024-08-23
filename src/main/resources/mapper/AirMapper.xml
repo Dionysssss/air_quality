@@ -17,6 +17,18 @@
             </if>
     </select>
 
+    <update id="updateById">
+        UPDATE air
+            <set>
+                <if test="districtId != null">district_id = #{districtId},</if>
+                <if test="monitorTime != null">monitor_time = #{monitorTime},</if>
+                <if test="pm10 != null">pm10 = #{pm10},</if>
+                <if test="pm25 != null">pm25 = #{pm25},</if>
+                <if test="monitoringStation != null">monitoring_station = #{monitoringStation}</if>
+            </set>
+        WHERE id = #{id}
+    </update>
 </mapper>
+
 
 
